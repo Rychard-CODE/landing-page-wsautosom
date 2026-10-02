@@ -1,0 +1,944 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+    height: 80px;
+    background: #080808;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 5%;
+
+    border-bottom: 2px solid #e50909;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo (descendente, funciona mesmo com <a> envolvendo a imagem) */
+
+header img {
+    width: 150px;
+    height: auto;
+}
+
+/* Menus */
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+header nav a {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #ff1e1e;
+}
+.menu-dropdown {
+    position: relative;
+}
+
+.dropdown-conteudo {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: #141414;
+
+    border: 1px solid #333;
+    border-radius: 6px;
+
+    padding: 10px 0;
+
+    min-width: 220px;
+
+    z-index: 1001;
+}
+
+.dropdown-conteudo a {
+    display: block;
+
+    padding: 10px 20px;
+
+    font-size: 13px;
+}
+
+.dropdown-conteudo a:hover {
+    background: #1e1e1e;
+    color: #ff1e1e;
+}
+
+.menu-dropdown:hover .dropdown-conteudo {
+    display: block;
+}
+
+/* Botão orçamento */
+
+#orçamento {
+    background: #e50909;
+    padding: 12px 20px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+#orçamento:hover {
+    background: #ff3333;
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   BANNER PRINCIPAL
+========================= */
+
+body > div:first-of-type {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.75),
+            rgba(0,0,0,0.3)
+        ),
+        url("banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 1px solid #222;
+}
+
+body > div:first-of-type h1 {
+    max-width: 700px;
+
+    font-size: 52px;
+    line-height: 1.1;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+}
+
+body > div:first-of-type h1::first-line {
+    color: white;
+}
+
+body > div:first-of-type p {
+    max-width: 650px;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: #ddd;
+}
+
+.botao-hero {
+    display: inline-block;
+
+    align-self: flex-start;
+
+    background: #e50909;
+
+    padding: 16px 36px;
+
+    margin-top: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    border-radius: 6px;
+
+    box-shadow: 0 8px 25px rgba(229, 9, 9, 0.35);
+
+    transition: 0.3s;
+}
+
+.botao-hero:hover {
+    background: #ff2929;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(229, 9, 9, 0.5);
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+section {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 80px 0;
+}
+
+section > h2 {
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 50px;
+
+    text-transform: uppercase;
+
+    position: relative;
+}
+
+section > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+    height: 4px;
+
+    background: #e50909;
+
+    margin: 12px auto 0;
+}
+
+
+/* =========================
+   ESPECIALIDADES
+========================= */
+
+section:first-of-type {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+section:first-of-type > h2 {
+    grid-column: 1 / -1;
+}
+
+.especialidade {
+    background: #141414;
+
+    border: 1px solid #333;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    padding-bottom: 25px;
+
+    transition: 0.4s;
+}
+
+.especialidade:hover {
+    transform: translateY(-10px);
+
+    border-color: #e50909;
+
+    box-shadow: 0 10px 30px rgba(229, 9, 9, 0.25);
+}
+
+.especialidade img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    background: #222;
+}
+
+.especialidade h3 {
+    font-size: 21px;
+
+    margin: 20px 15px 10px;
+
+    color: #ffffff;
+}
+
+.especialidade p {
+    color: #bbb;
+
+    padding: 0 20px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Botões */
+
+.botao {
+    display: inline-block;
+
+    background: #e50909;
+
+    padding: 12px 25px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: #ff2929;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+section:nth-of-type(2) {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+section:nth-of-type(2) > h2 {
+    grid-column: 1 / -1;
+}
+
+.servico,
+section:nth-of-type(2) > div:last-child {
+    background: linear-gradient(
+        145deg,
+        #1b0808,
+        #111111
+    );
+
+    border: 1px solid #301010;
+
+    border-radius: 10px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.servico:hover,
+section:nth-of-type(2) > div:last-child:hover {
+    border-color: #e50909;
+
+    transform: translateY(-8px);
+}
+
+.servico i,
+section:nth-of-type(2) > div:last-child i {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    background: #e50909;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    color: white;
+}
+
+.servico h3,
+section:nth-of-type(2) > div:last-child h3 {
+    font-size: 17px;
+
+    margin-bottom: 10px;
+}
+
+.servico p,
+section:nth-of-type(2) > div:last-child p {
+    color: #bbb;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   SOBRE NÓS
+========================= */
+
+section:nth-of-type(3) {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+section:nth-of-type(3) > img {
+    width: 100%;
+
+    min-height: 350px;
+
+    object-fit: cover;
+
+    background: #191919;
+
+    border-radius: 10px;
+
+    border: 1px solid #333;
+}
+
+.sobre-conteudo h2 {
+    font-size: 35px;
+
+    margin-bottom: 25px;
+
+    text-transform: uppercase;
+}
+
+.sobre-conteudo h2::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+    height: 4px;
+
+    background: #e50909;
+
+    margin-top: 10px;
+}
+
+.sobre-conteudo p {
+    color: #ccc;
+
+    margin-bottom: 18px;
+
+    font-size: 16px;
+}
+
+.sobre-conteudo strong {
+    color: #ffffff;
+}
+
+
+/* =========================
+   DIFERENCIAIS
+========================= */
+
+section:nth-of-type(4) {
+    width: 100%;
+    max-width: none;
+
+    background: #111;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 70px;
+
+    padding: 35px 5%;
+
+    border-top: 1px solid #e50909;
+    border-bottom: 1px solid #e50909;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.rodape {
+    background: #080808;
+
+    padding-top: 60px;
+}
+
+.rodape-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 40px;
+}
+
+.logo-rodape {
+    width: 150px;
+
+    margin-bottom: 20px;
+}
+
+.rodape-coluna img {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+}
+
+.rodape-coluna p {
+    color: #aaa;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.rodape-coluna h3 {
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+    color: #fff;
+
+    text-transform: uppercase;
+}
+
+.rodape-coluna h3::after {
+    content: "";
+
+    display: block;
+
+    width: 40px;
+    height: 3px;
+
+    background: #e50909;
+
+    margin-top: 7px;
+}
+
+/* Lista */
+
+.rodape-coluna ul {
+    list-style: none;
+}
+
+.rodape-coluna li {
+    margin-bottom: 10px;
+}
+
+.rodape-coluna li a {
+    color: #aaa;
+
+    transition: 0.3s;
+}
+
+.rodape-coluna li a:hover {
+    color: #e50909;
+
+    padding-left: 5px;
+}
+
+/* Ícones sociais do rodapé */
+
+.rodape-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.rodape-social a {
+    width: 36px;
+    height: 36px;
+
+    background: #e50909;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.rodape-social a:hover {
+    background: #ff3333;
+    transform: translateY(-3px);
+}
+
+/* WhatsApp (link do rodapé) */
+
+.whatsapp {
+    display: inline-block;
+
+    background: #e50909;
+
+    padding: 12px 20px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    background: #ff2929;
+
+    transform: translateY(-3px);
+}
+
+/* Botão flutuante do WhatsApp */
+
+.whatsapp-flutuante {
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    background: #25D366;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    font-size: 32px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+    z-index: 2000;
+
+    animation: pulsar 2s infinite;
+
+    transition: 0.3s;
+}
+
+.whatsapp-flutuante:hover {
+    background: #1ebe57;
+
+    transform: scale(1.1);
+}
+
+@keyframes pulsar {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Meios de pagamento */
+
+.meios-pagamento {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 20px auto 0;
+
+    padding-top: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #222;
+}
+
+.meios-pagamento h3 {
+    font-size: 13px;
+
+    margin-bottom: 12px;
+
+    text-transform: uppercase;
+
+    color: #888;
+
+    letter-spacing: 0.5px;
+}
+
+.pagamento-lista {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.pagamento-lista img {
+    width: 40px;
+    height: 26px;
+
+    object-fit: contain;
+
+    background: #ffffff;
+
+    border-radius: 4px;
+
+    padding: 4px;
+
+    transition: 0.3s;
+}
+
+.pagamento-lista img:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   PARTE INFERIOR DO FOOTER
+========================= */
+
+.rodape-bottom {
+    margin-top: 50px;
+
+    padding: 20px 5%;
+
+    background: #050505;
+
+    border-top: 1px solid #222;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.rodape-bottom p,
+.rodape-bottom a {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.rodape-bottom a:hover {
+    color: #e50909;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1000px) {
+
+    header {
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+    header nav {
+        gap: 15px;
+
+    }
+
+    section:first-of-type {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section:nth-of-type(2) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    body > div:first-of-type {
+        min-height: 450px;
+
+        padding: 50px 6%;
+    }
+
+    body > div:first-of-type h1 {
+        font-size: 38px;
+    }
+
+    body > div:first-of-type p {
+        font-size: 15px;
+    }
+
+    section:first-of-type {
+        grid-template-columns: 1fr;
+    }
+
+    section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+
+    section:nth-of-type(3) {
+        grid-template-columns: 1fr;
+    }
+
+    section:nth-of-type(4) {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 25px;
+
+        text-align: center;
+    }
+
+    .rodape-container {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .logo-rodape {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .rodape-coluna h3::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .rodape-bottom {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    header nav a {
+        font-size: 11px;
+    }
+
+    #orçamento {
+        padding: 8px 12px;
+    }
+
+    body > div:first-of-type h1 {
+        font-size: 30px;
+    }
+
+    section {
+        width: 92%;
+
+        padding: 55px 0;
+    }
+
+    section > h2 {
+        font-size: 26px;
+    }
+
+    .whatsapp-flutuante {
+        width: 50px;
+        height: 50px;
+
+        font-size: 26px;
+
+        bottom: 18px;
+        right: 18px;
+    }
+
+    .pagamento-lista img {
+        width: 34px;
+        height: 22px;
+    }
+}
